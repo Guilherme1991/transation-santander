@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 my-4">
+            <h5 class="my-4">Envie suas transacões aonde estiver em um piscar de olhos.</h5>
+            <form (ngSubmit)="send()" #valid="ngForm">
+                <div class="form-group mt-2">
+                    <label>Nome completo:</label><br>
+                    <input type="text" class="form-control" #formName="ngModel" [(ngModel)]="name" name="name" required />
+                    <app-validations info="Validations is sucessfull" *ngIf="formName.invalid && formName.touched"></app-validations>
+                </div>
+                <div class="form-group mt-2">
+                    <label>Pix number:</label><br>
+                    <input type="text" class="form-control" #formPix="ngModel" [(ngModel)]="pix" name="pix" required />
+                    <app-validations info="Validations is sucessfull" *ngIf="formPix.invalid && formPix.touched"></app-validations>
+                </div>
+                <div class="form-group mt-2">
+                    <label>Valor do depósito:</label><br>
+                    <input type="text" class="form-control" #formValueCash="ngModel" [(ngModel)]="valueCash" name="valueCash" required />
+                    <app-validations info="Validations is sucessfull" *ngIf="formValueCash.invalid && formValueCash.touched"></app-validations>
+                </div>
+                <div class="sub mt-3 mb-2">
+                    <button type="submit" class="btn btn-secondary" [disabled]="valid.invalid">Enviar transacão</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-8 text-center">
+            <img src="assets/img/happy-people.png" alt="peoples" />
+        </div>
+    </div>
+</div>

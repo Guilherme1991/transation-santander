@@ -1,0 +1,36 @@
+<div class="container py-3">
+    <table class="table table-hover" *ngIf="returnGet.length; else emptyAlert">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Nome</td>
+                <td>Número do pix</td>
+                <td>Valor depositado</td>
+                <td>Acões</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of returnGet">
+                <td>{{ item.id }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.pix }}</td>
+                <td>{{ item.valueCash | currency : 'BRL' }}</td>
+                <td>
+                    <div>
+                        <i class="fa fa-pencil mx-2 pointer" (click)="edit()"></i>
+                        <i class="fa fa-trash mx-2 pointer" (click)="trash(item.id)"></i>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="register" [ngClass]="{'d-none': returnGet.length === 0}">
+        <p>Total de {{ returnGet.length }} registros.</p>
+    </div>
+    <ng-template #emptyAlert>
+        <div class="text-center">
+            <img src="assets/img/consumer.png" alt="Consumer" />
+            <p class="py-2">Infelizmente não encontramos nada por aqui!</p>
+        </div>
+    </ng-template>
+</div>
