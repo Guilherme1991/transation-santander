@@ -17,7 +17,9 @@
                 <td>{{ item.valueCash | currency : 'BRL' }}</td>
                 <td>
                     <div>
-                        <i class="fa fa-pencil mx-2 pointer" (click)="edit()"></i>
+                        <a routerLink="product/{{ item.id }}">
+                            <i class="fa fa-pencil mx-2 pointer"></i>
+                        </a>
                         <i class="fa fa-trash mx-2 pointer" (click)="trash(item.id)"></i>
                     </div>
                 </td>
@@ -27,10 +29,18 @@
     <div class="register" [ngClass]="{'d-none': returnGet.length === 0}">
         <p>Total de {{ returnGet.length }} registros.</p>
     </div>
+    <!-- <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+    </mat-paginator> -->
     <ng-template #emptyAlert>
         <div class="text-center">
-            <img src="assets/img/consumer.png" alt="Consumer" />
-            <p class="py-2">Infelizmente não encontramos nada por aqui!</p>
+            <div class="row">
+                <div class="col-md-4 d-flex align-items-center">
+                    <p>Faca suas transacões em um piscar de olhos.</p>
+                </div>
+                <div class="col-md-8">
+                    <img src="assets/img/consumer.png" width="500px" alt="Consumer" />
+                </div>
+            </div>
         </div>
     </ng-template>
 </div>

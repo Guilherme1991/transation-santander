@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SendCash } from '../placeholder/send-cash';
 import { ServiceService } from './../services/service.service';
 
@@ -9,7 +10,10 @@ import { ServiceService } from './../services/service.service';
 })
 export class TableComponent implements OnInit {
   returnGet: SendCash[] = [];
-  constructor(private service: ServiceService) { }
+  constructor(
+    private service: ServiceService,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
     this.get()
@@ -21,9 +25,10 @@ export class TableComponent implements OnInit {
     }, error => console.log(error)
     )
   }
-  edit() {
-
-  }
+  // edit(id: string) {
+  //   this.service.update(id);
+  //   this.router.navigateByUrl('createUpdate');
+  // }
   trash(id: number) {
     this.service.remove(id).subscribe(()=> {
     window.location.reload();

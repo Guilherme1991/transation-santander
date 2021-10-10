@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ValidationsComponent } from './validations/validations.component';
+import { ProductUpdateComponent } from './product/product-update/product-update.component';
 
 @NgModule({
-  declarations: [ValidationsComponent],
+  declarations: [ValidationsComponent, ProductUpdateComponent],
   imports: [
     CommonModule
   ],
   exports: [
-    ValidationsComponent
+    ValidationsComponent,
+    ProductUpdateComponent
   ]
 })
 export class ComponentsModule { }

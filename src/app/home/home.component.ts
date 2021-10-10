@@ -10,9 +10,9 @@ import { ServiceService } from '../services/service.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  name = '';
-  pix = '';
-  valueCash = '';
+   public name = '';
+   public pix = '';
+   public valueCash = '';
 
   constructor(
     private service: ServiceService,

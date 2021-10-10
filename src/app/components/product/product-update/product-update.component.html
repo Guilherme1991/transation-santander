@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 my-4">
+            <h5 class="my-4">Edite os dados de suas transacões.</h5>
+            <form>
+                <div class="form-group mt-2">
+                    <label>Nome completo:</label><br>
+                    <input type="text" class="form-control" [(ngModel)]="name" name="name" required />
+                </div>
+                <div class="form-group mt-2">
+                    <label>Pix number:</label><br>
+                    <input type="text" class="form-control" [(ngModel)]="pix" name="pix" required />
+                </div>
+                <div class="form-group mt-2">
+                    <label>Valor do depósito:</label><br>
+                    <input type="text" class="form-control" [(ngModel)]="valueCash" name="valueCash" required />
+                </div>
+            </form>
+            <div class="d-flex">
+                <div class="sub mt-3">
+                    <button type="submit" class="btn btn-primary" (click)="save()">Salvar Produto</button>
+                </div>
+                <div class="sub mt-3 mx-2">
+                    <button type="submit" class="btn btn-secondary" (click)="cancel()">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
