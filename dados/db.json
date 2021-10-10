@@ -7,34 +7,16 @@
       "id": 1
     },
     {
-      "name": "Juliana Cristina",
+      "name": "Veio do formulário",
       "pix": "33453345",
-      "valueCash": "30000",
+      "valueCash": "20000",
       "id": 2
     },
     {
       "name": "Veio do formulário",
-      "pix": "33453345",
-      "valueCash": "30000",
+      "pix": "5435345",
+      "valueCash": "20000",
       "id": 3
-    },
-    {
-      "name": "Marina Nicesio Soares",
-      "pix": "54353333",
-      "valueCash": "30000",
-      "id": 4
-    },
-    {
-      "name": "Antonio Fagundes",
-      "pix": "33453345",
-      "valueCash": "30000",
-      "id": 5
-    },
-    {
-      "name": "Thiago Pereira Amaral",
-      "pix": "33453345",
-      "valueCash": "30000",
-      "id": 6
     }
   ]
 }
