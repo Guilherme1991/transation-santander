@@ -45,9 +45,9 @@ export class TableComponent implements OnInit {
             'Seus arquivos foram deletados com sucesso!.',
             'success'
           ).then(()=>{
-            this.service.remove(id).subscribe(()=> {})
-          }).then(()=> {
-            window.location.reload();
+            this.service.remove(id).subscribe(()=> {
+              window.location.reload();
+            })
           })
         }
       })
