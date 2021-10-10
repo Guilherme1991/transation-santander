@@ -30,17 +30,13 @@ export class TableComponent implements OnInit {
   //   this.router.navigateByUrl('createUpdate');
   // }
   trash(id: number) {
-    this.service.remove(id).subscribe(()=> {
-      Swal.fire('Deletado com sucesso!').then(() => {
-        
-      })
       Swal.fire({
         title: 'Está certo disso?',
         text: "Voce não poderá reverter a exclusão!",
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonColor: 'gray',
-        cancelButtonColor: '#d33',
+        confirmButtonColor: '#d33',
+        cancelButtonColor: 'gray',
         confirmButtonText: 'Sim, deletar!'
       }).then((result) => {
         if (result.isConfirmed) {
@@ -48,11 +44,12 @@ export class TableComponent implements OnInit {
             'Deletado!',
             'Seus arquivos foram deletados com sucesso!.',
             'success'
-          ).then(()=> {
+          ).then(()=>{
+            this.service.remove(id).subscribe(()=> {})
+          }).then(()=> {
             window.location.reload();
           })
         }
       })
-    })
   }
 }
