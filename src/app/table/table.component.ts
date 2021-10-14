@@ -1,34 +1,21 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { SendCash } from '../placeholder/send-cash';
 import { ServiceService } from './../services/service.service';
-import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss']
 })
-export class TableComponent implements OnInit, OnDestroy {
+export class TableComponent {
   returnGet: SendCash[] = [];
+  action$ = this.service.getReturn();
   constructor(
     private service: ServiceService,
-    private router: Router,
-    private subscription: Subscription
+    private router: Router
     ) { }
 
-  ngOnInit(): void {
-    this.get()
-  }
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
-  }
-  get() {
-    this.subscription = this.service.getReturn().subscribe((returnGet) => {
-      this.returnGet = returnGet
-    }, error => console.log(error)
-    )
-  }
   // edit(id: string) {
   //   this.service.update(id);
   //   this.router.navigateByUrl('createUpdate');

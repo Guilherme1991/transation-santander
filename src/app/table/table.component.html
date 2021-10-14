@@ -1,4 +1,4 @@
-<div class="container py-3">
+<div class="container py-3" *ngIf="action$ | async as returnGet">
     <table class="table table-hover" *ngIf="returnGet.length; else emptyAlert">
         <thead>
             <tr>
