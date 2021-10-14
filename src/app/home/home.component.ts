@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
    public name = '';
    public pix = '';
    public valueCash = '';
-
+   waitng: boolean = false;
   constructor(
     private service: ServiceService,
     private router: Router
@@ -26,5 +26,8 @@ export class HomeComponent implements OnInit {
       this.router.navigateByUrl('table')
     }, error=> console.log(error)
     )
+  }
+  waiting() {
+    alert('Deu certo!')
   }
 }

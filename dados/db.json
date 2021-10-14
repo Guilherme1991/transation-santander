@@ -1,28 +1,16 @@
 {
   "transations": [
     {
-      "name": "Guilherme Luiz Quintino Da Silva",
+      "name": "Guilherme",
       "pix": "5435345",
-      "valueCash": "20000",
+      "valueCash": "7000000",
       "id": 1
-    },
-    {
-      "name": "GUILHERME LUIZ QUINTINO DA SILVA",
-      "pix": "54353333",
-      "valueCash": "20000",
-      "id": 2
-    },
-    {
-      "name": "Juliana Cristina",
-      "pix": "54353333",
-      "valueCash": "30000",
-      "id": 3
     },
     {
       "name": "Veio do formulário",
       "pix": "54353333",
-      "valueCash": "7000000",
-      "id": 4
+      "valueCash": "20000",
+      "id": 2
     }
   ]
 }
