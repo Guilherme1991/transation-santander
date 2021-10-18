@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <div class="row">
         <div class="col-md-12 my-4">
             <h5 class="my-4">Edite os dados de suas transacões.</h5>
@@ -24,6 +24,30 @@
                     <button class="btn btn-secondary" (click)="cancel()">Cancelar</button>
                 </div>
             </div>
+        </div>
+    </div>
+</div> -->
+<div class="container my-4">
+    <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Nome completo:</mat-label>
+            <input matInput placeholder="Ex. Pizza" [(ngModel)]="product.name" name="name" required />
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Pix number:</mat-label>
+            <input matInput placeholder="Ex. Pizza" [(ngModel)]="product.pix" name="pix" required />
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Valor do depósito:</mat-label>
+            <input matInput placeholder="Ex. Pizza" [(ngModel)]="product.valueCash" name="valueCash" required />
+        </mat-form-field>
+    </form>
+    <div class="d-flex">
+        <div class="sub mt-3">
+            <button mat-button (click)="save()">Salvar dados</button>
+        </div>
+        <div class="sub mt-3 mx-2">
+            <button mat-button color="warn" (click)="cancel()">Cancelar</button>
         </div>
     </div>
 </div>

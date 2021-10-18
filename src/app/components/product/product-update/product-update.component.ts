@@ -9,12 +9,11 @@ import { ServiceService } from 'src/app/services/service.service';
   styleUrls: ['./product-update.component.scss']
 })
 export class ProductUpdateComponent implements OnInit {
-  public name = '';
-  public pix = '';
-  public valueCash = '';
-
-  product: SendCash;
-
+  product: any = {
+    name: '',
+    pix: '',
+    valueCash: ''
+   }
   constructor(
     private router: Router,
     private service: ServiceService,
@@ -25,6 +24,7 @@ export class ProductUpdateComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id')
     this.service.readById(id).subscribe(product => {
       this.product = product;
+      console.log(product)
     })
   }
   save(): void {

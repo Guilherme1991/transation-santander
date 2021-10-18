@@ -21,7 +21,7 @@ export class ServiceService {
     }).pipe(take(1))
   }
   getReturn(): Observable<SendCash[]> {
-    return this.http.get<SendCash[]>(API).pipe(take(1))
+    return this.http.get<SendCash[]>(API)
   }
   remove(id: number): Observable<SendCash[]> {
     const ids = `${API}/${id}`;
