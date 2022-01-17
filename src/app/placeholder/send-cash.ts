@@ -1,6 +1,6 @@
 export interface SendCash {
     name: string;
     pix: string;
-    valueCash: string;
+    valueCash: any;
     id: number;
 }

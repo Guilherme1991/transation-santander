@@ -28,12 +28,12 @@ export class ServiceService {
     return this.http.delete<SendCash[]>(ids).pipe(take(1))
   }
   //Return the specific ID to the config from update!
-  readById(id: string): Observable<SendCash> {
+  readById(id: string): Observable<SendCash[]> {
     const ids = `${API}/${id}`;
-    return this.http.get<SendCash>(ids).pipe(take(1))
+    return this.http.get<SendCash[]>(ids).pipe(take(1))
   }
-  update(product: SendCash): Observable<SendCash> {
+  update(product: SendCash): Observable<SendCash[]> {
     const ids = `${API}/${product.id}`;
-    return this.http.put<SendCash>(ids, product).pipe(take(1))
+    return this.http.put<SendCash[]>(ids, product).pipe(take(1))
   }
 }

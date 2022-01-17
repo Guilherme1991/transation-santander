@@ -1,4 +1,4 @@
-<div class="container py-3" *ngIf="action$ | async as returnGet">
+<div class="container py-3">
     <table class="table table-hover" *ngIf="returnGet.length; else emptyAlert">
         <thead>
             <tr>
@@ -26,8 +26,13 @@
             </tr>
         </tbody>
     </table>
-    <div class="register" [ngClass]="{'d-none': returnGet.length === 0}">
-        <p>Total de {{ returnGet.length }} registros.</p>
+    <div class="flex-item">
+        <div class="register" [ngClass]="{'d-none': returnGet.length === 0}">
+            <p>Total de {{ returnGet.length }} registros.</p>
+        </div>
+        <div class="register" [ngClass]="{'d-none': returnGet.length === 0}">
+            <p>Valor total depositado: {{ unifiqueValue() | currency : 'BRL' }}</p>
+        </div>
     </div>
     <ng-template #emptyAlert>
         <div class="text-center">
